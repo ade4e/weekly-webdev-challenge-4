@@ -1,0 +1,29 @@
+{
+  "name": "weekly-webdev-challenge-4",
+  "version": "1.0.0",
+  "description": "Zadanie nr 4 z grupy Weekly WebDev Challenge. Wdrozenie projektu do HTML/CSS/JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ade4e/weekly-webdev-challenge-4.git"
+  },
+  "keywords": [
+    "weeklywebdevchallenge"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ade4e/weekly-webdev-challenge-4/issues"
+  },
+  "homepage": "https://github.com/ade4e/weekly-webdev-challenge-4#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
