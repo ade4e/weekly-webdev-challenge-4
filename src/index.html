@@ -10,13 +10,23 @@
   <title>Zadanie 4 z Weekly Challenge</title>
 
   <link href="css/main.css" rel="stylesheet">
-
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="wrapper">
     <nav class="nav">
-      <div class="nav__burger">☰</div>
+      <a href="#"><div class="nav__burger">
+        
+          <span id="hamburger">&#9776;</span>
+          <span id="hamburger2">&#9776;</span>
+        <span id="cross">&#735;</span>
+      
+      </div>
+    </a>
       <ul class="nav__menu">
 
         <li>Home</li>
@@ -40,6 +50,21 @@
         <img src="img/user.png" alt="">
       </div>
     </nav>
+    <div class="menubar">
+      <ul class="menubar__list">
+
+        <li>Home</li>
+
+        <li>Store</li>
+
+        <li>Blog</li>
+
+        <li>About</li>
+
+        <li>Contact</li>
+
+      </ul>
+    </div>
     <div class="container">
       <div class="aside1">
         <div class="aside1__menu">
@@ -56,7 +81,7 @@
             <ul>
               <li>
                 <img src="img/call.png" alt="">
-                <div class="eq">(912) 555-1234 <br />(912) 555-5678</div>
+                <div class="eq">(912) 555-1234 <br />(912) 555-5678</div>           
               </li>
               <li>
                 <img src="img/localization.png" alt="">
@@ -72,25 +97,29 @@
         </div>
         <div class="aside1__submenu">
           <ul class="aside1__submenu--sub">
+            <img src="img/submenu--arrow.png" alt="" class="submenu-arrow">
             <h3>Tech</h3>
             <li>Software & Apps</li>
             <li>Gadgets</li>
             <li>Mobile</li>
           </ul>
           <ul class="aside1__submenu--sub">
-            <h3>Entertainment</h3>
+            <img src="img/submenu--arrow.png" alt="" class="submenu-arrow">
+          <h3>Entertainment</h3>
             <li>Film</li>
             <li>Gaming</li>
             <li>Music</li>
             <li>Sport</li>
           </ul>
           <ul class="aside1__submenu--sub">
+            <img src="img/submenu--arrow.png" alt="" class="submenu-arrow">
             <h3>Business</h3>
             <li>Jobs</li>
             <li>Marketing</li>
             <li>Media</li>
           </ul>
           <ul class="aside1__submenu--sub">
+            <img src="img/submenu--arrow.png" alt="" class="submenu-arrow">
             <h3>Lifestyle</h3>
             <li>Home</li>
             <li>Health & Fitness</li>
@@ -189,19 +218,39 @@
     </div>
   </div>
   <script>
+    // $(document).ready(function() {
+    //     $("#hamburger").click(function() {
+    //         $(".menubar").show();
+    //         $("#hamburger").hide();
+    //         $("#cross").show();
+    //     $("#cross").click(function() {
+    //         $(".menubar").hide();
+    //         $("#cross").hide();
+    //         $("#hamburger").show();
+    
+     $(document).ready(function() {
+        $("#hamburger").click(function() {
+            $(".menubar").show();
+            $("#hamburger").hide();
+            $("#cross").show();
+        $("#cross").click(function() {
+            $(".menubar").hide();
+            $("#cross").hide();
+            $("#hamburger").show();
+        });
+    });  
+    });
+
     var slideIndex = 1;
     showSlides(slideIndex);
-
     // Next/previous controls
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
-
     // Thumbnail image controls
     function currentSlide(n) {
       showSlides(slideIndex = n);
     }
-
     function showSlides(n) {
       var i;
       var slides = document.getElementsByClassName("mySlides");

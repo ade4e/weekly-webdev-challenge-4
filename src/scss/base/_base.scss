@@ -1,93 +1,162 @@
 html {
-  font-size: 10px;
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 *,
 *:after,
 *:before {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  background: #4f6881;
-  min-height: calc(100vh - 100px);
-  margin: 50px;
-  font-size: 1.5rem;
-  color: #fff;
+    background: #4f6881;
+    margin: 50px;
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 .wrapper {
-  max-width: 942px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 15px;
+    max-width: 942px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 15px;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-  @media (max-width: 500px) {
-    grid-template-columns: auto;
-  }
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 .nav {
-  display: grid;
-  grid-template-columns: auto 5fr 4fr;
-  background: #fff;
-
-  &__burger {
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #56ccc8;
-    width: 60px;
-    height: 60px;
-    font-weight: 700;
-  }
-
-  &__menu {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 80px));
-    color: $gray;
-    font-size: 1.6rem;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-
-    * {
+    grid-template-columns: 60px 6fr 5fr;
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        box-shadow: inset 35px 0px 0px 0px #4f6881;
     }
-  }
-
-  &__icons {
-    color: #475055;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-right: 10px;
-
-    & * {
-      margin: 0 10px;
+    &__burger {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #56ccc8;
+        width: 60px;
+        height: 60px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background: #fff;
+        }
     }
-
-    &--media {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      border-left: 1px solid #dde2e4;
-      border-right: 1px solid #dde2e4;
-
-      & * {
-        margin: 0 7px;
-      }
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $gray;
+        font-size: 1.6rem;
+        text-align: center;
+        padding-left: 25px;
+        * {
+            margin: 0 5px;
+            &:hover {
+                color: #56ccc8;
+                cursor: pointer;
+            }
+        }
     }
-  }
+    &__icons {
+        color: #475055;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 10px;
+        & * {
+            margin: 0 10px;
+        }
+        &--media {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid #dde2e4;
+            border-right: 1px solid #dde2e4;
+            & * {
+                margin: 0 7px;
+            }
+        }
+    }
 }
 
 .carousel {
-  height: 400px;
+    height: 400px;
+}
+
+@include respond-to(mobile) {
+    .nav {
+        grid-template-columns: 60px 1fr;
+    }
+    .nav__menu {
+        display: none;
+    }
+    .carousel {
+        display: none;
+    }
+}
+
+.menubar {
+    background-color: #fff;
+    color: #475055;
+    width: 100%;
+    display: none;
+    position: relative;
+    top: -15px;
+    &__list {
+        display: flex;
+        flex-direction: column;
+        &>* {
+            padding: 10px 0;
+            text-align: center;
+            transition: all 0.1s ease-in-out;
+            &:hover {
+                background-color: #56ccc8;
+                color: #fff;
+            }
+        }
+    }
+}
+
+#cross {
+    display: none;
+    font-size: 50px;
+    position: relative;
+    top: 10px;
+    transition: transform 0.4s;
+}
+
+#cross,
+#hamburger,
+#hamburger2 {
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav__burger:hover #hamburger,
+.nav__burger:hover #hamburger2,
+.nav__burger:hover #cross {
+    color: black;
+}
+#hamburger {
+  display: none;
+}
+@include respond-to(mobile) {
+  #hamburger {
+    display: block;
+  }
+  #hamburger2 {
+    display: none;
+  }
 }
