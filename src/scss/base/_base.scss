@@ -27,7 +27,7 @@ body {
 .container {
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .nav {
@@ -149,14 +149,16 @@ body {
 .nav__burger:hover #cross {
     color: black;
 }
+
 #hamburger {
-  display: none;
-}
-@include respond-to(mobile) {
-  #hamburger {
-    display: block;
-  }
-  #hamburger2 {
     display: none;
-  }
+}
+
+@include respond-to(mobile) {
+    #hamburger {
+        display: block;
+    }
+    #hamburger2 {
+        display: none;
+    }
 }
