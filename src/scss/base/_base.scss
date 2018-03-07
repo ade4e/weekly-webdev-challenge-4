@@ -20,21 +20,23 @@ body {
 .wrapper {
     max-width: 942px;
     margin: 0 auto;
-    display: grid;
-    grid-gap: 15px;
+    
+   
 }
 
 .container {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    
 }
 
 .nav {
     display: grid;
-    grid-template-columns: 60px 6fr 5fr;
+    grid-template-columns: 60px 9fr 8fr;
     background: #fff;
     transition: all 0.5s ease-in-out;
+    margin-bottom: 15px;
     &:hover {
         box-shadow: inset 35px 0px 0px 0px #4f6881;
     }
@@ -93,6 +95,7 @@ body {
 
 .carousel {
     height: 400px;
+    margin-top: 15px;
 }
 
 @include respond-to(mobile) {
@@ -113,10 +116,11 @@ body {
     width: 100%;
     display: none;
     position: relative;
-    top: -15px;
     &__list {
         display: flex;
         flex-direction: column;
+       margin-bottom: 15px;
+        
         &>* {
             padding: 10px 0;
             text-align: center;
@@ -150,7 +154,7 @@ body {
     color: black;
 }
 
-#hamburger {
+/* #hamburger {
     display: none;
 }
 
@@ -161,4 +165,4 @@ body {
     #hamburger2 {
         display: none;
     }
-}
+} */
